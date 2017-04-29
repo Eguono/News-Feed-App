@@ -1,0 +1,32 @@
+{
+  "name": "news-feed-app",
+  "version": "1.0.0",
+  "description": "A News Feed Appplication",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eguono/News-Feed-App.git"
+  },
+  "keywords": [
+    "Webpack",
+    "Babel-Loader",
+    "React"
+  ],
+  "author": "Eguonoghene Efekemo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eguono/News-Feed-App/issues"
+  },
+  "homepage": "https://github.com/Eguono/News-Feed-App#readme",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "jshint": "^2.9.4"
+  }
+}
