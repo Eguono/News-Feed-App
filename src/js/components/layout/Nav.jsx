@@ -1,25 +1,36 @@
 import React from 'react';
+import { IndexLink, Link } from 'react-router';
+import PropTypes from 'prop-types';
 
-export default class Nav extends React.Component {
-  render() {
-    return (
-      <div>
-        <nav id="nav">
-          <ul class>
-            <li><a href="#">Gmail</a></li>
-            <li><a href="#">Images</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">Maps</a></li>
+const Nav = (props) => {
+  const img = props.info.imageURL;
+  const name = props.info.name;
+  return (
+    <div>
+      <nav>
+        <div className="nav-wrapper teal lighten-1">
+          <div data-activates="mobile-demo" className="button-collapse">
+            <i className="material-icons">menu</i>
+          </div>
+          <ul className="right hide-on-med-and-down">
+            <li><IndexLink to="news">Dashboard</IndexLink></li>
             <li>
-              <a href="#">
-                <img class="pic" src="https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/11885084_1076528895692966_6215947904473078540_n.jpg?oh=51ccbf9e5d3a3ace7a7d6e008fb36621&oe=594B5292"
-                  alt="profile pic"></img>
-              </a>
+              <Link to="/">
+                <img className="pic" src={img} alt="profile pic" />
+              </Link>
             </li>
-            </ul>
-        </nav>
-      </div>
-        );
-  }
-}
+          </ul>
+          <ul className="side-nav" id="mobile-demo">
+            <li><IndexLink><p>Welcome {name}</p></IndexLink></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  );
+};
 
+Nav.propTypes = {
+  info: PropTypes.object.isRequired,
+};
+
+export default Nav;
