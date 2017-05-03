@@ -8,6 +8,6 @@ import Main from './pages/Main.js';
 const app = document.getElementById('app');
 ReactDom.render(<Router>
     <Route path="/" component={Main} />
-    <Route path="/headline" component={Headline} />
+    <Route path="/headlines" component={Headline} />
 </Router>
-    , app)
+    , app);
