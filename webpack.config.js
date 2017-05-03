@@ -6,7 +6,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   context: path.join(__dirname, 'src'),
   devtool: debug ? 'inline-sourcemap' : null,
-  entry: './js/client.jsx',
+  entry: './js/client.js',
   module: {
     loaders: [
       {
@@ -34,7 +34,7 @@ module.exports = {
     tls: 'empty',
   },
   output: {
-    path: `${__dirname}/src/`,
+    path: __dirname + "/src/",
     filename: 'client.min.js',
   },
   plugins: debug ? [
