@@ -1,11 +1,44 @@
 import axios from 'axios';
 
-const getSources = (source, sortBy, callback) => {
-    const all = sources;
-    const api = 'https://newsapi.org/v1/'
-    const key = '213327409d384371851777e7c7f78dfe';
+export const getSources = (category, callback) => {
+  const api = 'https://newsapi.org/v1/sources';
 
-    if(source === null){
-        const link = api + all
-    }
+  if (!category) {
+    axios.get(api)
+      .then((response) => {
+        return callback(response.data.sources);
+      }).catch((error) => {
+        console.log(error);
+      });
+  } else {
+    const link = api + '?category=' + category
+    axios.get(link)
+      .then((response) => {
+        return callback(response.data.sources);
+      }).catch((error) => {
+        console.log(error);
+      });
+  }
+}
+
+export const getArticles = (source, sortBy, callback) => {
+  const api = 'https://newsapi.org/v1/articles?source=';
+
+  if (!sortBy) {
+    const link = api + source;
+    axios.get(link)
+      .then((response) => {
+        return callback(response.data.articles)
+      }).catch((error) => {
+        console.log(error);
+      });
+  } else {
+    const link = api + source + '&sortBy=' + sortBy;
+    axios.get(link)
+      .then((response) => {
+        return callback(response.data.articles)
+      }).catch((error) => {
+        console.log(error);
+      });
+  }
 }
