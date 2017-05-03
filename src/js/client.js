@@ -7,7 +7,7 @@ import Main from './pages/Main.js';
 
 const app = document.getElementById('app');
 ReactDom.render(<Router>
-    <Route path="/" component={Main} />
-    <Route path="/headlines" component={Headline} />
+  <Route path="/" component={Main} />
+  <Route path="/headlines" component={Headline} />
 </Router>
-    , app);
+  , app);

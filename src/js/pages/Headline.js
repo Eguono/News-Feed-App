@@ -1,14 +1,16 @@
 import React from 'react';
 
 import Nav from '../components/layout/Nav';
+import Footer from '../components/layout/Footer';
 
 export default class Headlines extends React.Component {
-    render() {
-        return (
-            <div>
-                <Nav />
-                <h1>the headlines</h1>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <Nav />
+        <h1>the headlines</h1>
+        <Footer />
+      </div>
+    );
+  }
 }
