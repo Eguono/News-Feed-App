@@ -12,7 +12,7 @@ export default class Home extends React.Component {
     this.state = {
       sources: NewsStore.getSources(),
     };
-    this.sources = this.getSources.bind(this);
+    this.sources = this.getNews.bind(this);
   }
 
   componentWillMount() {
@@ -24,28 +24,26 @@ export default class Home extends React.Component {
     NewsStore.removeListener('changes', this.sources);
   }
 
-  getSources(result = null) {
-    if (result === null) {
-      this.setState({
-        sources: NewsStore.getSources(),
-      });
-    } else {
-      this.setState({
-        sources: result,
-      });
-    }
+  getNews() {
+    this.setState({
+      sources: NewsStore.getSources(),
+    });
   }
 
+
   filterSources(event) {
-    const result = [];
+    const data = [];
     NewsStore.getSources().map((source) => {
       if (source.name.toLowerCase().search(event.target.value.toLowerCase()) !== -1) {
-        result.push(source);
+        data.push(source);
       }
     });
-    console.log(result);
-    this.getSources(result);
+    console.log(data);
+    this.setState({
+      sources: data,
+    });
   }
+
   render() {
     const { sources } = this.state;
 
