@@ -30,7 +30,6 @@ export default class Home extends React.Component {
     });
   }
 
-
   filterSources(event) {
     const data = [];
     NewsStore.getSources().map((source) => {
@@ -52,7 +51,7 @@ export default class Home extends React.Component {
       <div className="container">
         <div className="row">
           <div className="col m8">
-            <input id="source_search" type="text" className="validate" placeholder="Search for sources" onChange={this.filterSources} />
+            <input id="source_search" type="text" className="validate" placeholder="Search for sources" onChange={this.filterSources.bind(this)} />
           </div>
           <div className="col m4">
             <form>
