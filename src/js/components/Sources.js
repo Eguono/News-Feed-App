@@ -7,7 +7,7 @@ const Sources = (props) => {
     <div className="col m4">
       <h5>{name}</h5>
       <p>{description}</p>
-      <Link class="btn btn-default" to={'/headlines:&{id}'} >More Info</Link>
+      <Link class="btn btn-default" to={`/headlines/&{id}`} >More Info</Link>
     </div>
   );
 };

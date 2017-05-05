@@ -5,6 +5,7 @@ import Footer from '../components/layout/Footer';
 
 export default class Headlines extends React.Component {
   render() {
+    console.log(this.props);
     return (
       <div>
         <Nav />
